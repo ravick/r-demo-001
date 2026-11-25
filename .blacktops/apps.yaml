@@ -1,0 +1,13 @@
+apiVersion: blacktops.ai/v1
+kind: Apps
+apps:
+  - name: web
+    command: npm start
+    workingDirectory: .
+    port: 3000
+    resources:
+      - name: BLACKTOPS_APP_DATA_DIR
+        kind: app-data
+        sizeGb: 1
+    hosting:
+      healthPath: /health
